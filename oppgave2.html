@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokal Butikk</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+            padding: 20px;
+            margin: auto;
+            max-width: 1200px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .form-container form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-container input, .form-container textarea, .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .dark-mode-toggle, .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-to-top {
+            right: 60px;
+            display: none;
+        }
+
+        .form-container button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+
+        .product {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .product h3 {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Velkommen til Lokal Butikk</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Hjem</a>
+        <a href="#bestill">Bestill Produkter</a>
+        <a href="#apningstider">Åpningstider</a>
+        <a href="#kontakt">Kontakt oss</a>
+    </nav>
+    <div id="home" class="container">
+        <div class="product">
+            <img src="tennis ball.jpg" alt="Produkt 1">
+            <h3>Tennis ball</h3>
+            <p>Pris: 80 NOK</p>
+        </div>
+        <div class="product">
+            <img src="ball.jpg" alt="Produkt 2">
+            <h3>Soccer ball</h3>
+            <p>Pris: 270 NOK</p>
+        </div>
+        <div class="product">
+            <img src="rugby ball.jpg" alt="Produkt 3">
+            <h3>Rugby ball</h3>
+            <p>Pris: 300 NOK</p>
+        </div>
+        <div class="product">
+            <img src="baskt ball.jpg" alt="Produkt 4">
+            <h3>Basket ball</h3>
+            <p>Pris: 350 NOK</p>
+        </div>
+        <div class="product">
+            <img src="bowlin gball.jpg" alt="Produkt 5">
+            <h3>Bowling ball</h3>
+            <p>Pris: 400 NOK</p>
+        </div>
+    </div>
+    
+</body>
+<body>
+    <div id="bestill" class="form-container"></div>
+    <header>
+        <h1>Bestill Produkter</h1>
+    </header>
+    <div class="form-container">
+        <form action="email@youremail" method="POST">
+            <label for="name">Navn:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-post:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="product">Velg produkt:</label>
+            <select id="product" name="product" required>
+                <option value="Produkt 1">Tennis ball</option>
+                <option value="Produkt 2">Soccer ball</option>
+                <option value="Produkt 3">Rugby ball</option>
+                <option value="Produkt 4">Basket ball</option>
+                <option value="Produkt 5">Bownling ball</option>
+            </select>
+
+            <label for="comments">Kommentarer:</label>
+            <textarea id="comments" name="comments" rows="4"></textarea>
+
+            <button type="submit">Bestill</button>
+        </form>
+    </div>
+</body>
+</head>
+<body>
+    <div id="apningstider" class="container"></div>
+    <header>
+        <h1>Butikkens Åpningstider</h1>
+    </header>
+    <div class="container">
+        <div class="product">
+            <h3>Mandag - Fredag</h3>
+            <p>09:00 - 20:00</p>
+        </div>
+        <div class="product">
+            <h3>Lørdag</h3>
+            <p>10:00 - 19:00</p>
+        </div>
+        <div class="product">
+            <h3>Søndag</h3>
+            <p>Stengt</p>
+        </div>
+    </div>
+</body>
+</head>
+<body>
+    <div id="kontakt" class="container"></div>
+    <header>
+        <h1>Kontakt oss</h1>
+    </header>
+    <div class="container">
+        <div class="product">
+            <h3>Butikkens Adresse</h3>
+            <p>Gata 5, Oslo</p>
+        </div>
+        <div class="product">
+            <h3>Telefon</h3>
+            <p>+47 123 456 789</p>
+        </div>
+        <div class="product">
+            <h3>E-post</h3>
+            <p>epost@playfullshop</p>
+        </div>
+    </div>
+</body>
+<button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+</button>
+<script>
+    window.onscroll = function() { scrollFunction() };
+
+    function scrollFunction() {
+        const backToTopButton = document.querySelector('.back-to-top');
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        document.body.scrollTop = 0; 
+        document.documentElement.scrollTop = 0;
+    }
+
+    const toggleDarkMode = document.querySelector('.dark-mode-toggle');
+    toggleDarkMode.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+    });
+</script>
+</html>
+
